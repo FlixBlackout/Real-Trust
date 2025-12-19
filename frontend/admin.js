@@ -2,7 +2,7 @@
 // Use environment-based URL for production deployment
 const API_BASE_URL = window.location.hostname === 'localhost'
     ? 'http://localhost:8080/api'
-    : 'https://realtrust-backend.onrender.com/api';  // Update this after deploying backend
+    : 'https://realtrust-backend-bp78.onrender.com/api';
 
 // Image Cropper Variables
 let cropper = null;
