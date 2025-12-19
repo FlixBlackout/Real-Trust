@@ -2,9 +2,16 @@ services:
   - type: web
     name: realtrust-backend
     runtime: java
-    buildCommand: cd backend && mvn clean package -DskipTests
-    startCommand: java -jar backend/target/realtrust-backend-1.0.0.jar
+    plan: free
+    buildCommand: |
+      cd backend
+      mvn clean package -DskipTests
+    startCommand: cd backend && java -jar target/realtrust-backend-1.0.0.jar
     envVars:
+      - key: JAVA_VERSION
+        value: 21
+      - key: MAVEN_VERSION
+        value: 3.9.5
       - key: SPRING_PROFILES_ACTIVE
         value: prod
       - key: MONGODB_URI
