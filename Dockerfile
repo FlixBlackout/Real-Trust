@@ -14,8 +14,8 @@ COPY backend/src ./src
 # Build the application
 RUN mvn clean package -DskipTests
 
-# Use JRE for runtime
-FROM eclipse-temurin:21-jre-alpine
+# Use full JDK for runtime (not JRE-alpine) to fix SSL issues
+FROM eclipse-temurin:21-jdk
 
 # Set working directory
 WORKDIR /app
