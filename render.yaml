@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: realtrust-backend
+    env: java
+    buildCommand: ./build.sh
+    startCommand: java -jar backend/target/realtrust-backend-1.0.0.jar
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: MONGODB_URI
+        sync: false
+      - key: PORT
+        value: 8080

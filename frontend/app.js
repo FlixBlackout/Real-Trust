@@ -1,5 +1,8 @@
 // API Configuration
-const API_BASE_URL = 'http://localhost:8080/api';
+// Use environment-based URL for production deployment
+const API_BASE_URL = window.location.hostname === 'localhost' 
+    ? 'http://localhost:8080/api'
+    : 'https://realtrust-backend.onrender.com/api';  // Update this after deploying backend
 
 // Load Projects from API
 async function loadProjects() {
