@@ -20,7 +20,7 @@ async function loadProjects() {
         projectsContainer.innerHTML = projects.map(project => `
             <div class="col-md-6 col-lg-4">
                 <div class="project-card">
-                    <img src="${API_BASE_URL.replace('/api', '')}/uploads/${project.image}" class="img-fluid w-100" alt="${project.name}" style="height: 250px; object-fit: cover;">
+                    <img src="${project.image}" class="img-fluid w-100" alt="${project.name}" style="height: 250px; object-fit: cover;">
                     <div class="p-4">
                         <h5 class="text-primary">${project.name}</h5>
                         <p class="text-muted">${project.description}</p>
@@ -52,7 +52,7 @@ async function loadClients() {
         clientsContainer.innerHTML = clients.map(client => `
             <div class="col-md-6 col-lg-4 col-xl-2">
                 <div class="client-testimonial">
-                    <img src="${API_BASE_URL.replace('/api', '')}/uploads/${client.image}" alt="${client.name}">
+                    <img src="${client.image}" alt="${client.name}">
                     <p class="text-muted">${client.description}</p>
                     <h6 class="client-name">${client.name}</h6>
                     <p class="client-designation">${client.designation}</p>

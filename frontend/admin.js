@@ -211,7 +211,7 @@ async function loadProjects() {
         
         projectsList.innerHTML = projects.map(project => `
             <tr>
-                <td><img src="${API_BASE_URL.replace('/api', '')}/uploads/${project.image}" class="preview-image" alt="${project.name}"></td>
+                <td><img src="${project.image}" class="preview-image" alt="${project.name}"></td>
                 <td>${project.name}</td>
                 <td>${project.description.substring(0, 100)}...</td>
                 <td>
@@ -290,7 +290,7 @@ async function loadClients() {
         
         clientsList.innerHTML = clients.map(client => `
             <tr>
-                <td><img src="${API_BASE_URL.replace('/api', '')}/uploads/${client.image}" class="preview-image rounded-circle" alt="${client.name}"></td>
+                <td><img src="${client.image}" class="preview-image rounded-circle" alt="${client.name}"></td>
                 <td>${client.name}</td>
                 <td>${client.designation}</td>
                 <td>${client.description.substring(0, 100)}...</td>
